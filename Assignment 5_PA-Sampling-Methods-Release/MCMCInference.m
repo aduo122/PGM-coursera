@@ -124,8 +124,8 @@ for i = 1:max_iter
     % This is a dummy line added so that submit.m runs without an error
     % even if you have not coded anything.
     % Please delete this line.
-
-    all_samples(i+1, :) = A0; 
+    A = GibbsTrans(A, G, F);
+    all_samples(i+1, :) = A;
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 end
 

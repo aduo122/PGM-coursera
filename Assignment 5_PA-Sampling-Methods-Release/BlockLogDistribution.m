@@ -53,7 +53,11 @@ LogBS = zeros(1, d);
 %
 % Also you should have only ONE for-loop, as for-loops are VERY slow in matlab
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+factors = F(unique([G.var2factors{V}]));
+for i = 1:d
+    A(V) = i;
+    LogBS(i) = LogProbOfJointAssignment(factors, A);
+end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Re-normalize to prevent underflow when you move back to probability space
